@@ -1,20 +1,16 @@
+import { Village } from "./village";
 
-export class World {
-    private _name: string;
-
-    get name(): string {
-        return this._name;
+export class World {    
+    
+    private _village : Village = new Village();
+    public get village() : Village {
+        return this._village;
     }
-
-    set name(value: string) {
-        this._name = value;
+    public set village(v : Village) {
+        this._village = v;
     }
-
-    constructor() {
-        this._name = 'Test World';
-    }
-
+    
     turn():void {
-        this._name = 'Next turn';
+        this.village.turn();
     }
 }

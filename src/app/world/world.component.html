@@ -1,4 +1,7 @@
 <p>
-  world {{world.name}} works!
+  Village: {{world.village.name}}
 </p>
+<div *ngFor="let item of getResources()" >
+  {{ getResourceName(item) }}: {{ world.village.resources[item] }}
+</div> 
 <button (click)="onTurnClick()" >Turn</button>
